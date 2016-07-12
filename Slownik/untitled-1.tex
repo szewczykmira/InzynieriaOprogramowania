@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+
+\usepackage[MeX]{polski}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+
+\makeatletter
+
+   \renewcommand\@seccntformat[1]{\csname the#1\endcsname.\quad}
+    \renewcommand\numberline[1]{#1.\hskip0.7em}
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{2cm}
+    \begin{center}\small        
+        Instytut Informatyki Uniwersytetu Wrocławskiego\\
+        Pracownia Inżynierii Oprogramowania\\
+  \vspace{2cm}
+        \normalsize \textsc{Grupa 16.}\\
+        \normalsize \textsc{\@author}\\
+\end{center}
+    \vspace{3cm}
+    \noindent\linia
+    \begin{center}
+        \LARGE \textsc{Dokumentacja projektu \textbf{Adminum}}\\       
+        \linia
+        \vspace{2cm}
+        \LARGE \textsc{\@title}\\
+      
+        \vspace{1.5cm}
+       \normalsize \@date\\
+
+
+
+
+    \end{center}
+  \end{titlepage}
+}
+\makeatother
+
+\author{Mirosława Szewczyk, Marek Rybak}
+\title{Słownik}
+
+\begin{document}
+    \maketitle
+\setcounter{page}{2}
+    \tableofcontents
+    \newpage
+    \section{Wstęp}
+Niniejszy dokument zawiera spis pojęć użytych w dokumentach dotyczących projektu ,,Adminum".
+   \section{Słownik}
+\begin{tabular}{lcl}
+administrator & -  & osoba zajmująca się zarządzaniem systemem informatycznym i \\
+& &odpowiadająca za jego działanie. \\
+adres IP & -  & liczba nadawana interfejsowi sieciowemu, grupie interfejsów, bądź \\
+& & całej sieci internetowej opartej na protokole IP \\
+adres MAC & -  &sprzętowy adres karty sieciowej.\\
+baza danych & -  &zbiór danych zapisanych w ściśle określony sposób w strukturach \\
+& &odpowiadających założonemu modelowi danych. \\
+gniazdko internetowe & -  &złącze stanowiące część instalacji sieciowej, służące do przyłą- \\
+& &czania do niej komputerów.  \\
+GUI & -  &z ang. \textit{graphical user interface}, graficzny interfejs użytkownika.\\
+rekord & -  & zestaw danych, zazwyczaj posiadających ustaloną wewnętrzną\\
+& & strukturę, stanowiący pewną całość, ale mogący być częścią\\
+& & większego zbioru rekordów. \\
+sieć LAN & - & ang. \textit{Local Area Network}, wewnętrzna sieć lokalna
+
+
+
+
+\end{tabular}
+
+
+	
+\end{document}

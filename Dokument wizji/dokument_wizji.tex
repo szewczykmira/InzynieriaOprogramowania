@@ -1,0 +1,94 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+
+\usepackage[MeX]{polski}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+
+\makeatletter
+
+   \renewcommand\@seccntformat[1]{\csname the#1\endcsname.\quad}
+    \renewcommand\numberline[1]{#1.\hskip0.7em}
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{2cm}
+    \begin{center}\small        
+        Instytut Informatyki Uniwersytetu Wrocławskiego\\
+        Pracownia Inżynierii Oprogramowania\\
+  \vspace{2cm}
+       
+      \normalsize \textsc{ Grupa nr 16.}\\
+        \normalsize \textsc{\@author}\\
+\end{center}
+    \vspace{3cm}
+    \noindent\linia
+    \begin{center}
+        \LARGE \textsc{Dokumentacja projektu \textbf{Adminum}}\\       
+        \linia
+        \vspace{2cm}
+        \LARGE \textsc{\@title}\\
+      
+        \vspace{1.5cm}
+       \normalsize \@date\\
+
+
+
+
+    \end{center}
+  \end{titlepage}
+}
+\makeatother
+
+\author{Mirosława Szewczyk, Marek Rybak}
+\title{Założenia ogólne}
+
+\begin{document}
+    \maketitle
+\setcounter{page}{2}
+    \tableofcontents
+    \newpage
+    \section{Wprowadzenie}
+	\subsection{Cel dokumentu}
+	Celem niniejszego dokumentu jest określenie przeznaczenia aplikacji ,,Adminum'' oraz specyfikacja stawianych przed nią wymagań.
+	\subsection{Opis ogólny programu ,,Adminum''}
+	Przedsięwzięcie ma na celu zbudowanie aplikacji internetowej wspomagającej zarządzanie siecią komputerową w domach studenckich Uniwersytetu Wrocławskiego. Podstawową funkcją programu będzie zarządzanie bazą danych użytkowników sieci komputerowej domów studenckich. ,,Adminum'' zapewni również narzędzie umożliwiające administratorom sieci zarządzanie dostępem poszczególnych użytkowników do sieci Internet.
+    \section{Użytkownicy}
+	\subsection{Opis użytkowników}
+	Ze względu na zapotrzebowanie na poszczególne funkcje oraz różny zakres uprawnień w sieci komputerowej użytkownicy aplikacji dzielą się na dwie grupy:
+	\begin{itemize}
+		\item Administratorzy -- osoby zatrudnione przez Uniwersytet Wrocławski do administrowania siecią komputerową domów studenckich.
+		\item Mieszkańcy -- osoby korzystające z sieci komputerowej domów studenckich. 
+	\end{itemize}
+	\subsection{Podstawowe potrzeby mieszkańców}
+	Do podstawowych możliwości, które program umożliwi tej grupie użytkowników, należą:
+	\begin{itemize}
+		\item wybór języka wyświetlanych komunikatów,
+		\item wypełnienie i złożenie elektronicznego wniosku o uruchomienie przyłącza do sieci komputerowej,
+		\item śledzenie stanu złożonego wniosku,
+		\item zapoznanie się ze spersonalizowanymi informacjami dotyczącymi działania sieci komputerowej domów studenckich.
+	\end{itemize}
+	\subsection{Podstawowe potrzeby administratorów}
+	Podstawowymi możliwościami, które program umożliwi grupie administratorów, są:
+	\begin{itemize}
+		\item kontrola i możliwość akceptacji lub odrzucenia złożonych przez użytkowników wniosków,
+		\item zarządzanie bazą danych użytkowników,
+		\item wyszukiwanie danych użytkowników według dowolnie ustalonych kryteriów,
+		\item możliwość sporządzania notatek ogólnych lub powiązanych z poszczególnymi użytkownikami,
+		\item przeglądanie profili użytkowników wraz z powiązanymi notatkami i informacjami pomocniczymi dotyczacymi "ulokowania" użytkownika w infrastrukturze sieciowej\footnote{Wskazanie konkretnej serwerowni i urządzenia sieciowego, przez które dany użytkownik łączy się z siecią komputerową domów studenckich Uniwersytetu Wrocławskiego.},
+		\item ograniczenie możliwości komunikacji użytkownika do sieci LAN.
+	\end{itemize}
+    \section{Cechy oprogramowania ,,Adminum''} 
+	\subsection{Wniosek ektroniczny}
+	Dzięki projektowanej aplikacji przyszli użytkownicy sieci komputerowej domów studenckich Uniwersytetu Wrocławskiego mogą w łatwy sposób złożyć elektroniczny wniosek o uruchomienie przyłącza do sieci komputerowej w domu studenckim. Strona internetowa sieci komputerowej domów studenckich umożliwiająca złożenie wniosku będzie się wyświetlała tuż po włączeniu dowolnej przeglądarki internetowej. Nie wszyscy użytkownicy sieci posługują się językiem polskim, dlatego oprogramowanie będzie udostępniało użytkownikowi możliwość zmiany języka wyświetlanych komunikatów na jeden z popularniejszych: angielski, niemiecki, francuski i rosyjski. Strona zawierać będzie również informacje na temat stanu już złożonego wniosku:
+	\begin{itemize}
+		\item oczekuje na rozpatrzenie,
+		\item odrzucony (wraz z podaniem powodu),
+		\item zaakceptowany.
+	\end{itemize}
+	Najważniejszym elementem jest oczywiście sam wniosek elektroniczny. Wniosek elektroniczny składa się z pól: imię, nazwisko, adres e-mail, dom studencki, piętro, nr pokoju, nr gniazdka, nr karty sieciowej (mac). Aplikacja sama pobiera numer karty sieciowej użytkownika. Zawęża również zakres pozostałych pól dotyczących miejsca zamieszkania użytkownika w domu studenckim na podstawie już wprowadzonych danych.
+	\subsection{Panel administratora sieci}	
+	Administrator sieci komputerowej ma dostęp do wniosków użytkowników oczekujących na zaakceptowanie i możliwość zaakceptowania. Posiada również możliwość odrzucenia wniosku po wpisaniu przyczyny takiej decyzji. Administrator ma również dostęp do bazy danych przechowującej informacje podane przez użytkowników w elektronicznych wnioskach, używane przez nich adresy IP oraz notatki sporządzone przez administratorów. Administrator, korzystając z panelu administracyjnego ma możliwość wyszukania użytkownika przy użyciu dowolnego podzbioru jego danych zawartych w bazie i wyświetlenia jego profilu zawierającego te dane, informacje o fizycznym ulokowaniu urządzenia sieciowego, przez które dany użytkownik łączy się z siecią komputerową, a także notatki związane z użytkownikiem wraz z nazwiskiem administratora który je sporządził. Z poziomu profilu użytkownika można ograniczyć możliwość jego komunikacji jedynie do sieci wewnętrznej domów studenckich lub też uniemożliwić mu taką komunikację w ogóle.
+
+	Za pomocą panelu administracyjnego jest również możliwe sporządzanie krótkich notatek dotyczących sieci komputerowej i przypisywania ich do poszczególnych użytkowników, gniazdek internetowych, pokoi, lub urządzeń sieciowych. Można również zarządzać informacjami zawartymi na stronie sieci komputerowej domów studenckich, tj. zmieniać treść lub usuwać już istniejące wpisy, a także dodawać nowe z zaznaczeniem czy mają być dostępne dla wszystkich, czy też dla konkretnej, być może jednoosobowej grupy użytkowników.
+\end{document}

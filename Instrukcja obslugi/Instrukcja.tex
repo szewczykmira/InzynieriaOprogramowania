@@ -1,0 +1,66 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+
+\usepackage[MeX]{polski}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+
+\makeatletter
+
+   \renewcommand\@seccntformat[1]{\csname the#1\endcsname.\quad}
+    \renewcommand\numberline[1]{#1.\hskip0.7em}
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{2cm}
+    \begin{center}\small        
+        Instytut Informatyki Uniwersytetu Wrocławskiego\\
+        Pracownia Inżynierii Oprogramowania\\
+  \vspace{2cm}
+       
+      \normalsize \textsc{ Grupa nr 16.}\\
+        \normalsize \textsc{\@author}\\
+\end{center}
+    \vspace{3cm}
+    \noindent\linia
+    \begin{center}
+        \LARGE \textsc{Dokumentacja projektu \textbf{Adminum}}\\       
+        \linia
+        \vspace{2cm}
+        \LARGE \textsc{\@title}\\
+      
+        \vspace{1.5cm}
+       \normalsize \@date\\
+
+
+
+
+    \end{center}
+  \end{titlepage}
+}
+\makeatother
+
+\author{Mirosława Szewczyk, Marek Rybak}
+\title{Instrukcja obsługi}
+
+\begin{document}
+    \maketitle
+\setcounter{page}{2}
+    \tableofcontents
+    \newpage
+    \section{Podstawowe informacje}
+	Oprogramowanie ,,Adminum'' zostało napisane aby usprawnić pracę administratorów sieci akademickiej Uniwersytetu Wrocławskiego.
+   \subsection{Instalacja aplikacji}
+	Aplikacja klienta nie wymaga instalacji, ponieważ jest dostępna przez przeglądarkę internetową przy pierwszym jej uruchomieniu po podłączeniu się do sieci.
+  \section{Opis ogólny programu ,,Adminum''}
+	Przedsięwzięcie ma na celu zbudowanie aplikacji internetowej wspomagającej zarządzanie siecią komputerową w domach studenckich Uniwersytetu Wrocławskiego. Podstawową funkcją programu będzie zarządzanie bazą danych użytkowników sieci komputerowej domów studenckich. ,,Adminum'' zapewni również narzędzie umożliwiające administratorom sieci zarządzanie dostępem poszczególnych użytkowników do sieci Internet.
+    \section{Użytkownicy}
+	\subsection{Opis użytkowników}
+	Ze względu na zapotrzebowanie na poszczególne funkcje oraz różny zakres uprawnień w sieci komputerowej użytkownicy aplikacji dzielą się na dwie grupy:
+	\begin{itemize}
+		\item Administratorzy -- osoby zatrudnione przez Uniwersytet Wrocławski do administrowania siecią komputerową domów studenckich.
+		\item Mieszkańcy -- osoby korzystające z sieci komputerowej domów studenckich. 
+	\end{itemize}
+	
+	
+\end{document}

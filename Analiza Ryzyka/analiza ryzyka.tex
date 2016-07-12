@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+
+\usepackage[MeX]{polski}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+
+\makeatletter
+
+   \renewcommand\@seccntformat[1]{\csname the#1\endcsname.\quad}
+    \renewcommand\numberline[1]{#1.\hskip0.7em}
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{2cm}
+    \begin{center}\small        
+        Instytut Informatyki Uniwersytetu Wrocławskiego\\
+        Pracownia Inżynierii Oprogramowania\\
+  \vspace{2cm}
+        \normalsize \textsc{Grupa 16.}\\
+        \normalsize \textsc{\@author}\\
+\end{center}
+    \vspace{3cm}
+    \noindent\linia
+    \begin{center}
+        \LARGE \textsc{Dokumentacja projektu \textbf{Adminum}}\\       
+        \linia
+        \vspace{2cm}
+        \LARGE \textsc{\@title}\\
+      
+        \vspace{1.5cm}
+       \normalsize \@date\\
+
+
+
+
+    \end{center}
+  \end{titlepage}
+}
+\makeatother
+
+\author{Mirosława Szewczyk, Marek Rybak}
+\title{Analiza ryzyka}
+
+\begin{document}
+    \maketitle
+\setcounter{page}{2}
+    \tableofcontents
+    \newpage
+ \section{Zarządzanie ryzykiem}
+Na postęp w realizacji projektu wpływa wiele czynników, które mogą zahamować proces jego tworzenia. Niniejszy dokument jest poświęcony analizie tego ryzyka oraz sposobach minimalizacji wpływu tych czynników.
+
+	\begin{center} Tabela 1. Analiza ryzyka \end{center}
+        \begin{tabular}{|p{3cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{3cm}|} \hline
+            Czynnik ryzyka &
+            1\% &
+            5\% &
+            20\% &
+            50\% &
+            80\% &
+            95\% &
+            99\% &
+            Sposób minimalizacji ryzyka \\ \hline
+            Choroba członka projektu & & & & & & & X & Zapas czasu na realizację zadań \\ \hline
+            Choroba wielu pracwników jednocześnie & & & & X & & & & Szczepienia ochronne na koszt firmy \\ \hline
+            Poważny błąd w analizie lub projektowaniu wykryty w późnych fazach projektu & & X & & & & & & Konsultacja z pracownikami naukowymi uczelni wyższych \\ \hline
+            Nieduże przedłużenie którejkolwiek z faz projektu & & & & & & X & & Zapas czasu na realizację zadań \\ \hline
+            Zanczne przedłużenie jednej z faz projektu & & & & X & & & & Przesunięcia pracowników pomiędzy grupami \\ \hline
+            Katastrofa, klęski żywiołowe & X & & & & & & & ubezpieczenie, codzienne tworzenie kopii zapasowych \\ \hline
+            Wysoka cena usług zwnętrznych & & & & & & X & & Zapas w budżecie \\ \hline
+	Brak zaangażowania ze strony zespołu & & & X & & & & & Premie motywacyjne \\ \hline
+	Nieznajomość technologii przez członków zespołu & & & & & X & & & Kursy dokształcające przed rozpoczęciem projektu \\ \hline
+
+
+        \end{tabular}
+ 
+
+
+	
+\end{document}

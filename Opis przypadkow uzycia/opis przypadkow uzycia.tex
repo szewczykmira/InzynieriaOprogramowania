@@ -1,0 +1,85 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+
+\usepackage[MeX]{polski}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+
+\makeatletter
+
+   \renewcommand\@seccntformat[1]{\csname the#1\endcsname.\quad}
+    \renewcommand\numberline[1]{#1.\hskip0.7em}
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{2cm}
+    \begin{center}\small        
+        Instytut Informatyki Uniwersytetu Wrocławskiego\\
+        Pracownia Inżynierii Oprogramowania\\
+  \vspace{2cm}
+	\normalsize \textsc{Grupa 16.}\\
+        \normalsize \textsc{\@author}\\
+\end{center}
+    \vspace{3cm}
+    \noindent\linia
+    \begin{center}
+        \LARGE \textsc{Dokumentacja projektu \textbf{Adminum}}\\       
+        \linia
+        \vspace{2cm}
+        \LARGE \textsc{\@title}\\
+      
+        \vspace{1.5cm}
+       \normalsize \@date\\
+
+
+
+
+    \end{center}
+  \end{titlepage}
+}
+\makeatother
+
+\author{Mirosława Szewczyk, Marek Rybak}
+\title{Opis przypadków użycia}
+
+\begin{document}
+    \maketitle
+\setcounter{page}{2}
+    \tableofcontents
+    \newpage
+    \section{Opis przypadków użycia}
+Przypadki użycia są realizowane przez dwa rodzaje aktorów:
+	\begin{itemize}
+	\item użytkownik sieci,
+	\item administrator sieci.
+	\end{itemize}
+	\subsection{Użytkownicy niezalogowani}
+Dla niezalogowanych użytkowników oprogramowanie „Adminum” powinno udostępniać dostęp do elektronicznego wniosku rejestracji do sieci, a także dać możliwość zgłoszenia usterek związanych z poprawnym działaniem sieci.
+	\subsection{Użytkownicy zalogowani}
+		\subsubsection{Sprawdzanie aktualnego stanu w sieci}
+
+Aktor: Użytkownik sieci.\\
+Motywacja: Użytkownik chce się dowiedzieć, jaki jest jego aktualny stan w sieci.\\
+Scenariusz bazowy: Użytkownik otwiera stronę główną programu „Adminum”, gdzie pojawia się informacja o aktualnym stanie w sieci: zarejestrowany, oczekujący na zaakceptowanie lub odrzucony (wraz z uzasadnieniem).\\
+Scenariusz alternatywny: Jeżeli z różnych powodów zgłoszenie użytkownika nie zostało odnotowane w bazie danych, to zostanie on przekierowany na stronę z elektronicznym wnioskiem rejestracji.
+		\subsubsection{Zgłaszanie usterek}
+Aktor: Użytkownik sieci.\\
+Motywacja:  Użytkownik sieci przy pomocy programu „Adminum” ma zamiar zgłosić problem związany z działaniem sieci.\\
+Scenariusz bazowy: Użytkownik wybiera zakładkę zawierającą formularz zgłoszeniowy. Można go wypełniać z dowolnego komputera podłączonego do sieci, ponieważ formularz nie pobiera automatycznie adresu karty sieciowej. W blankiecie użytkownik powinien podać informacje o swoim sprzęcie i opisać szczegółowo występujący problem.\\
+Scenariusz alternatywny: W przypadku problemu ze stroną zostanie wyświetlony odpowiedni komunikat.
+		\subsubsection{Dodawanie użytkowników do sieci}
+Aktor: Administrator sieci.\\
+Motywacja: Użytkownik chce zaakceptować lub odrzucić zgłoszenia o przyjęcie do sieci.\\
+Scenariusz bazowy: Administrator otwiera panel administracyjny przechodzi do zakładki z listą użytkowników oczekujących na zaakceptowanie ich wniosków. Administrator wybiera kandytata z listy i, wchodząc okno z jego danymi, ma możliwość przyjęcia lub odrzucenia jego zgłoszenia, w przypadku odrzucenia podaje powód swojej decyzji.
+		\subsubsection{Zarządzanie bazą danych użytkowników}
+Aktor: Administrator sieci.\\
+Motywacja: Za pomocą programu „Adminum” chce wprowadzić zmiany w danych użytkownika, ustawić zakres możliwości użytkownika lub dodać notatkę do rekordu.\\
+Scenariusz bazowy: Użytkownik o uprawnieniach administratora przechodzi w panelu administracyjnym do zakładki z bazą danych użytkowników. Ma tam wgląd do rekordów, które może otworzyć, tzn.  ma dostęp do wszystkich danych użytkownika oraz napisanych do tej pory notatek. Może on zmieniać lub dodawać adnotacje, a także zmieniać zakres możliwości danego użytkownika.\\
+Scenariusz alternatywny: Użytkownik z dostępem do panelu administracyjnego, nie posiadający jednak uprawnień administratora, będzie mógł wyłącznie przeglądać rekordy, nie mogąc dokonywać w nich żadnych zmian.	
+		\subsubsection{Przeglądanie informacji o usterkach}
+Aktor: Administrator sieci.\\
+Motywacja: Administrator sieci chce sprawdzić zgłoszone usterki.\\
+Scenariusz bazowy: Administrator sieci przechodzi do zakładki ze zgłoszonymi usterkami, gdzie może przeglądać listę usterek opisanych za pomocą krótkich tytułów nadanych im przez osoby zgłaszające. Dopiero po dotarciu do  pełnych danych o rekordzie administrator ma możliwość przeczytania dokładnego opisu problemu oraz odczytania lub poprawienia notateki dodanych przez innych administratorów.\\
+Scenariusz alternatywny: Użytkownik z dostępem do panelu sterowania, nie posiadający jednak uprawnień administratora, ma wyłącznie możliwość przeglądania rekordów.
+	
+\end{document}
